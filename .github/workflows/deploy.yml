@@ -37,6 +37,9 @@ jobs:
       - name: Add .nojekyll
         run: touch ./dist/.nojekyll
 
+      - name: Test deploy file creation
+        run: echo "Deploy test $(date)" > ./dist/test-deploy.txt
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
@@ -56,3 +59,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+       
